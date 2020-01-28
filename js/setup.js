@@ -14,30 +14,20 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
   .content
   .querySelector('.setup-similar-item');
 
-
-var wizards = [
-  {
-    name: WIZARD_NAMES[(Math.floor(Math.random() * (WIZARD_NAMES.length)))] + ' ' + WIZARD_SURNAMES[(Math.floor(Math.random() * (WIZARD_SURNAMES.length)))],
-    coatColor: COAT[(Math.floor(Math.random() * (COAT.length)))],
-    eyesColor: EYES[(Math.floor(Math.random() * (EYES.length)))]
-  },
-  {
-    name: WIZARD_NAMES[(Math.floor(Math.random() * (WIZARD_NAMES.length)))] + ' ' + WIZARD_SURNAMES[(Math.floor(Math.random() * (WIZARD_SURNAMES.length)))],
-    coatColor: COAT[(Math.floor(Math.random() * (COAT.length)))],
-    eyesColor: EYES[(Math.floor(Math.random() * (EYES.length)))]
-  },
-  {
-    name: WIZARD_NAMES[(Math.floor(Math.random() * (WIZARD_NAMES.length)))] + ' ' + WIZARD_SURNAMES[(Math.floor(Math.random() * (WIZARD_SURNAMES.length)))],
-    coatColor: COAT[(Math.floor(Math.random() * (COAT.length)))]
-  },
-  {
-    name: WIZARD_NAMES[(Math.floor(Math.random() * (WIZARD_NAMES.length)))] + ' ' + WIZARD_SURNAMES[(Math.floor(Math.random() * (WIZARD_SURNAMES.length)))],
-    coatColor: COAT[(Math.floor(Math.random() * (COAT.length)))],
-    eyesColor: EYES[(Math.floor(Math.random() * (EYES.length)))]
+var createWizard = function (length) {
+  var arr = [];
+  for (var i = 0; i <= length - 1; i++) {
+    arr.push({
+      name: WIZARD_NAMES[(Math.floor(Math.random() * (WIZARD_NAMES.length)))] + ' ' + WIZARD_SURNAMES[(Math.floor(Math.random() * (WIZARD_SURNAMES.length)))],
+      coatColor: COAT[(Math.floor(Math.random() * (COAT.length)))],
+      eyesColor: EYES[(Math.floor(Math.random() * (EYES.length)))]
+    }
+    );
   }
-];
+  return arr;
+};
 
-
+var wizards = createWizard(4);
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
 
@@ -48,6 +38,7 @@ var renderWizard = function (wizard) {
 };
 
 var fragment = document.createDocumentFragment();
+
 for (var i = 0; i < wizards.length; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
