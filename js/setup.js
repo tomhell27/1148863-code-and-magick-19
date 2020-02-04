@@ -79,8 +79,8 @@ wizardEyes.addEventListener('click', function () {
 
 
 setupFireball.addEventListener('click', function () {
-  setupFireball.style.background = FIRE_BALL[randomColor(0, FIRE_BALL.length)];
-  var fireballBack = setupFireball.style.background;
+  var fireballBack = FIRE_BALL[randomColor(0, FIRE_BALL.length)];
+  setupFireball.style.background = fireballBack;
   document.querySelector('[name=fireball-color]').value = fireballBack;
 });
 
