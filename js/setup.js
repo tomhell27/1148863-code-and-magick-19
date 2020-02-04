@@ -17,14 +17,9 @@ var setupOpen = document.querySelector('.setup-open-icon');
 var setupClose = document.querySelector('.setup-close');
 
 var onPopupEscPress = function (evt) {
-  if (userNameInput === document.activeElement) {
-    return evt;
-  } else {
-    if (evt.key === ESC_KEY) {
-      closePopup();
-    }
+  if (evt.key === ESC_KEY) {
+    closePopup();
   }
-  return onPopupEscPress();
 };
 
 var openPopup = function () {
