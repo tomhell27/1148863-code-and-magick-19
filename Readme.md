@@ -1,4 +1,4 @@
-# Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
+# Учебный проект «Код и Магия» (в процессе) [![Build status][travis-image]][travis-url]
 
 * Студент: [Ольга Гаврилова](https://up.htmlacademy.ru/javascript/19/user/1148863).
 * Наставник: `Неизвестно`.
